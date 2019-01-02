@@ -1,0 +1,100 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    font-family: '游ゴシック Medium';
+}
+
+
+h1, h3, h5{
+    margin: 0;
+    
+    font-family: 'Yu Gothic UI Semibold';
+}
+
+
+p{
+    margin: 0;
+    
+    word-wrap: break-word;
+}
+
+
+ul, dl{
+    margin: 0;
+}
+
+
+.column{
+    margin: 2vh 0.5vh;
+    padding: 2vh 0.5vh;
+    
+    width: 20vw;
+    min-width: 54vh;
+    height: 12rem;
+}
+
+
+.column__header{
+    border-bottom-width: thin;
+    border-bottom-style: dashed;
+}
+
+
+#intro{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    
+    width: 20vw;
+    min-width: 56vh;
+    min-height: 100vh;
+
+    color: #ffffff;
+
+    background-color: #ff0000;
+}
+
+
+#intro__header{
+    margin: 1vh 0.5vh;
+    padding: 1vh 0.5vh;
+}
+
+
+#contents{
+    flex-grow: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    width: 56vh;
+}
+
+
+#img1, #img2{
+    background-color: #ff0000;
+}
+
+
+#works{
+    height: 4rem;
+}
+
+
+#link{
+    height: 6rem;
+}
+
+
+#copyright{
+    height: 2rem;
+    
+    text-align: right;
+}
