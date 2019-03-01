@@ -2,99 +2,186 @@
     margin: 0;
     padding: 0;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    font-family: '游ゴシック Medium';
+    font-family: sans-serif;
 }
 
-
-h1, h3, h5{
+h1, h2, h3, h5, p, ul, dl{
     margin: 0;
-    
-    font-family: 'Yu Gothic UI Semibold';
 }
 
-
-p{
-    margin: 0;
-    
+h3, p{
     word-wrap: break-word;
+    text-align: justify;
 }
 
 
-ul, dl{
-    margin: 0;
-}
+#welcome{
+    width: 100%;
+    height: 100vh;
 
-
-.column{
-    margin: 2vh 0.5vh;
-    padding: 2vh 0.5vh;
-    
-    width: 20vw;
-    min-width: 54vh;
-    height: 12rem;
-}
-
-
-.column__header{
-    border-bottom-width: thin;
-    border-bottom-style: dashed;
-}
-
-
-#intro{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-start;
-    
-    width: 20vw;
-    min-width: 56vh;
-    min-height: 100vh;
+    align-items: center;
 
-    color: #ffffff;
+    position: absolute;
+    animation-name: fade_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
 
-    background-color: #ff0000;
+#welcome>h2{
+    background: linear-gradient(30deg, rgb(0, 175, 255), rgb(12, 19, 117));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
 }
 
 
-#intro__header{
-    margin: 1vh 0.5vh;
-    padding: 1vh 0.5vh;
+#background{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    animation-name: fade_in;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
-
-#contents{
-    flex-grow: 1;
+header{
+    width: 100%;
+    height: 100vh;
 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
     
-    width: 56vh;
+    visibility: hidden;
+    animation-name: flash;
+    animation-delay: 1s;
+    animation-duration: 50ms;
+    animation-iteration-count: 9;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
 
-
-#img1, #img2{
-    background-color: #ff0000;
+header>img{
+    width: 15rem;
 }
 
-
-#works{
-    height: 4rem;
+header>div{
+    color: #ffffff;
 }
 
-
-#link{
-    height: 6rem;
+header>div>h1, header>div>h5{
+    padding: 0 1rem;
+    animation-name: slide_ltr;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
 }
 
+.content{
+    width: 100%;
+    height: 100vh;
 
-#copyright{
-    height: 2rem;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+article>h3{
+    width: 12rem;
+    height: 1.9rem;
+
+    margin: -1rem -10rem 0rem 0rem;
+    border-bottom: solid thin #000000;
+    z-index: 1;
+}
+
+article>h3>span{
+    display: block;
+    padding: 0 1rem;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+article>div{
+    background-color: rgba(255, 255, 255, 0.8);
+
+    width: 32rem;
+    height: 20rem;
+
+    padding: 2rem 4rem;
+}
+
+article>dl{
+    margin: 1rem 0 0 1rem;
+}
+
+article>p{
+    writing-mode:vertical-rl;
+    height: 24rem;
+    margin-left: 0.2rem;
+
     text-align: right;
+
+    border-left: solid thin #000000;
+}
+
+time{
+    padding: 1rem 0;
+    color: #dbdbdb;
+    background-color: #282828;
+}
+
+footer{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.active{
+    animation-name: flash;
+    animation-duration: 50ms;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.active>article>h3>span{
+    animation-name: slide_ltr;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade_in{
+    100%{opacity: 1;}
+}
+
+@keyframes fade_out{
+    100%{opacity: 0;visibility: hidden;}
+}
+
+@keyframes flash{
+    0%{opacity: 0;visibility: visible;}
+    100%{opacity: 1;visibility: visible;}
+}
+
+@keyframes slide_ltr{
+    0%{width: 0%;height: 1.5em;overflow: hidden;padding-right: calc(100% + 1rem);}
+    100%{width: 100%;height: 1.5em;overflow: hidden;padding-right: 1rem;}
 }

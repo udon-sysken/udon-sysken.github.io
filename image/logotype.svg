@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="tiny" version="1.1"
+     height="180" width="240"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect x="0" y="0" width="180" height="120" fill="#ffffff" />
+    <rect x="190" y="30" width="50" height="150" fill="#ffffff" />
+    <polygon points="90,130 67,170 113,170" fill="#ffffff" />
+</svg>
