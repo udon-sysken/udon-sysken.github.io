@@ -7,9 +7,8 @@ function draw(){
     if(!canvas || !canvas.getContext)
         return -1;
 
-    //canvasを画面全体に広げる（アニメーションするならonresize時の設定は消していい）
-    canvas.width = document.documentElement.clientWidth;
-    canvas.height = document.documentElement.clientHeight;
+    canvas.width = screen.width;
+    canvas.height = screen.height;
 
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "rgb(12, 19, 117)";
@@ -41,9 +40,6 @@ function draw(){
 }
 
 window.onload = draw;
-
-//スマホだとスクロールの度に発火するの不味いよなあ……
-window.onresize = draw;
 
 //ここからアニメーション用
 window.onscroll = function(){
