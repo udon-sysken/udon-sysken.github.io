@@ -1,28 +1,27 @@
 ﻿body {
     margin: 0;
     padding: 0;
-
+    word-wrap: break-word;
     font-family: sans-serif;
 }
 
 h1, h2, h3, h5, p, ul, dl{
     margin: 0;
-    word-wrap: break-word;
 }
 
 p{
     text-align: justify;
 }
 
-
-#welcome{
+body>div, header{
     width: 100%;
-    height: 100vh;
-
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+#welcome{
     position: absolute;
     animation-name: fade_out;
     animation-duration: 2s;
@@ -36,66 +35,52 @@ p{
 }
 
 canvas{
-    opacity: 0;
-    position: fixed;
     top: -20px;
     left: -40px;
-    z-index: -1;
 }
 
-#background0{
-    width: 100%;
-    height: 100vh;
-
+.background{
+    z-index: -1;
     opacity: 0;
     position: fixed;
+    animation-fill-mode: forwards;
+}
+
+#blue_pointlight{
     top: 0;
     left: 0;
-    z-index: -1;
     background: radial-gradient(rgb(0, 175, 255), rgb(12, 19, 117));
 
     animation-name: fade_in;
     animation-delay: 1s;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
 }
 
-#background1{
-    animation-name: fade_in;
-    animation-delay: 1s;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-
-#background2{
-    animation-name: fade_in;
-    animation-delay: 1s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-}
-#background2{
-    animation: flash_loose 1s ease 2s infinite alternate;
-}
-
-
-#background3{
+#fragment{
     animation-name: fade_in;
     animation-delay: 2.5s;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
+}
+
+#hexagon_tile{
+    animation-name: fade_in;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+
+#diamond_line{
+    animation-name: fade_in;
+    animation-delay: 1s;
+    animation-duration: 2s;
+
+    animation: flash_loose 1s ease 2s infinite alternate;
 }
 
 header{
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    
+    color: #ffffff;
     visibility: hidden;
+
     animation-name: flash;
     animation-delay: 1s;
     animation-duration: 50ms;
@@ -108,13 +93,10 @@ header>img{
     width: 15rem;
 }
 
-header>div{
-    color: #ffffff;
-}
-
-header>div>h1, header>div>h5{
+header h1, header h5{
     overflow: hidden;
     padding: 0 2rem;
+
     animation-name: h1h5_slide_ltr;
     animation-delay: 1s;
     animation-duration: 1s;
@@ -122,34 +104,21 @@ header>div>h1, header>div>h5{
     animation-fill-mode: forwards;
 }
 
-.content{
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    visibility: hidden;
-}
-
 article{
     padding: 4rem 0;
     display: flex;
-    justify-content: center;
+    visibility: hidden;
 }
 
-article>h3{
+article h3{
+    z-index: 1;
     width: 12rem;
     height: 1.6em;
-
     margin: -1rem -10rem 0rem 0rem;
     border-bottom: solid thin #000000;
-    z-index: 1;
-    
 }
 
-article>h3>span{
+article h3>span{
     overflow: hidden;
     display: block;
     padding: 0 1rem;
@@ -159,11 +128,9 @@ article>h3>span{
 
 article>div{
     background-color: rgba(255, 255, 255, 0.8);
-
     max-width: 32rem;
     width: 60vw;
     min-height: 20rem;
-    
     padding: 2rem 4vw;
 }
 
@@ -173,12 +140,10 @@ article>div>dl{
 
 article>p{
     writing-mode: vertical-rl;
+    text-align: right;
     width: 1.5em;
     padding-left: 0.1rem;
     margin-left: 0.2rem;
-
-    text-align: right;
-
     border-left: solid thin #000000;
 }
 
@@ -190,7 +155,6 @@ time{
 
 footer{
     width: 100%;
-
     display: flex;
     justify-content: center;
 }
@@ -203,28 +167,28 @@ footer{
     animation-fill-mode: forwards;
 }
 
-.active>article>div{
+.active>div{
     animation-name: move_rtl;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
 
-.active>article>h3{
+.active>h3{
     animation-name: move_ltr;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
 
-.active>article>h3>span{
+.active>h3>span{
     animation-name: h3_slide_ltr;
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
 
-.active>article>p{
+.active>p{
     animation-name: move_ttb;
     animation-duration: 1s;
     animation-timing-function: ease;

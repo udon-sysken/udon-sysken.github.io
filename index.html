@@ -10,12 +10,15 @@
         <title>Udon-Sysken</title>
     </head>
     <body>
-        <div id="welcome"><h2><span>Welcome to Udon-Sysken!</span></h2></div>
+        <div id="welcome">
+            <h2>Welcome to Udon-Sysken!</h2>
+        </div>
 
-        <div id="background0"></div>
-        <canvas id="background3"></canvas>
-        <canvas id="background1"></canvas>
-        <canvas id="background2"></canvas>
+        <div class="background" id="blue_pointlight">
+            <canvas class="background" id="fragment"></canvas>
+            <canvas class="background" id="hexagon_tile"></canvas>
+            <canvas class="background" id="diamond_line"></canvas>
+        </div>
         
         <header>
             <img src="image/logotype.svg">
@@ -24,7 +27,8 @@
                 <h1>情報システム研究部</h1>
             </div>
         </header>
-        <div class="content">
+
+        <div>
             <article>
                 <h3><span>About</span></h3>
                 <div>
@@ -49,7 +53,7 @@
             </article>
         </div>
 
-        <div class="content">
+        <div>
             <article>
                 <h3><span>Performance</span></h3>
                 <div>
