@@ -1,5 +1,5 @@
 ﻿function rand(n){
-    return Math.floor(Math.random() * n + 1);
+    return Math.floor(Math.random() * (n + 1));
 }
 
 function radian(degree){
@@ -28,7 +28,7 @@ function draw_hexagon_tile(){
     ctx1.fillStyle = "rgba(0, 175, 255, 0.1)";
     for(var i=0; i<rate_area(1000); i++){
         let x = rand(canvas_width/r/0.866);
-        let y = r*rand(canvas_height/r) + x%2*r/2;
+        let y = r*rand(canvas_height/r) - x%2*r/2;
         x *= r*0.866;
         
         ctx1.beginPath();
@@ -47,7 +47,7 @@ function draw_diamond_line(){
     ctx2.strokeStyle = "rgba(0, 175, 255, 0.2)";
     for(var i=0; i<rate_area(5000); i++){
         let x = rand(canvas_width/r/1.732);
-        let y = 2*r*rand(canvas_height/r/2) + x%2*r;
+        let y = 2*r*rand(canvas_height/r/2) - x%2*r;
         x *= r*1.732;
         
         ctx2.beginPath();
@@ -64,7 +64,7 @@ function draw_diamond_line(){
     ctx2.strokeStyle = "rgba(0, 175, 225, 0.05)";
     for(var i=0; i<rate_area(25000); i++){
         let x = rand(canvas_width/r/1.732);
-        let y = 2*r*rand(canvas_height/r/2) + x%2*r;
+        let y = 2*r*rand(canvas_height/r/2) - x%2*r;
         x *= r*1.732;
         
         ctx2.beginPath();
