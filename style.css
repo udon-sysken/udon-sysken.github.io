@@ -1,37 +1,32 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    word-wrap: break-word;
     font-family: sans-serif;
+
+    background-image: url("image/bg_dot.svg");
+    background-size: 1rem;
+
+    word-break: keep-all;
 }
 
-h1, h2, h3, h5, p, ul, dl{
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h5{
+    font-size: 1rem;
+}
+
+h1, h2, h3, h5{
     margin: 0;
-}
-
-p{
-    text-align: justify;
-}
-
-body>div, header{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#welcome{
-    position: absolute;
-    animation-name: fade_out;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-}
-
-#welcome>h2{
-    background: linear-gradient(30deg, rgb(0, 175, 255), rgb(12, 19, 117));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(0,0,0,0);
 }
 
 canvas{
@@ -41,199 +36,122 @@ canvas{
 
 .background{
     z-index: -1;
-    opacity: 0;
-    position: fixed;
-    animation-fill-mode: forwards;
-}
-
-#blue_pointlight{
-    top: 0;
-    left: 0;
-    background: radial-gradient(rgb(0, 175, 255), rgb(12, 19, 117));
-
-    animation-name: fade_in;
-    animation-delay: 1s;
-    animation-duration: 1s;
-}
-
-#fragment{
-    animation-name: fade_in;
-    animation-delay: 2.5s;
-    animation-duration: 1s;
 }
 
 #hexagon_tile{
-    animation-name: fade_in;
-    animation-delay: 1s;
-    animation-duration: 1s;
+    position: absolute;
 }
 
-#diamond_line{
-    animation-name: fade_in;
-    animation-delay: 1s;
-    animation-duration: 2s;
-
-    animation: flash_loose 1s ease 2s infinite alternate;
-}
-
-header{
-    flex-direction:column;
-    color: #ffffff;
-    visibility: hidden;
-
-    animation-name: flash;
-    animation-delay: 1s;
-    animation-duration: 50ms;
-    animation-iteration-count: 9;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-}
-
-header>img{
-    width: 15rem;
-}
-
-header h1, header h5{
+#blue_light{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,rgb(0, 175, 255), rgb(12, 19, 117));
     overflow: hidden;
-    padding: 0 2rem;
+    width: 100%;
+    height: 75vh;
+}
 
-    animation-name: h1h5_slide_ltr;
-    animation-delay: 1s;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
+
+#header{
+    color: #ffffff;
+
+    padding-top: 25vh;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header>img#logotype{
+    width: 12rem;
 }
 
 article{
-    padding: 4rem 0;
     display: flex;
-    visibility: hidden;
+    flex-wrap: wrap;
+
+    margin: 4%;
 }
 
-article h3{
+article>header{
+    margin-right: 4rem;
+    margin-bottom: -6rem;
     z-index: 1;
-    width: 12rem;
-    height: 1.6em;
-    margin: -1rem -10rem 0rem 0rem;
-    border-bottom: solid thin #000000;
 }
 
-article h3>span{
-    overflow: hidden;
+article h2{
+    background-color: rgb(0, 175, 255);
+    width: 12rem;
+    height: 12rem;
+}
+
+
+article small{
+    color: #282828;
+
+    position: relative;
+    top: -2.5em;
+    left: 6rem;
+}
+
+article time{
     display: block;
-    padding: 0 1rem;
-    color: #ffffff;
-    background-color: #000000;
+    color: #dbdbdb;
+    background-color: #282828;
+
+    margin-left: 2rem;
+    padding-left: 4rem;
+}
+
+article h3, article h5{
+    color: rgb(4, 123, 209);
 }
 
 article>div{
-    background-color: rgba(255, 255, 255, 0.8);
-    max-width: 32rem;
-    width: 60vw;
-    min-height: 20rem;
-    padding: 2rem 4vw;
-}
-
-article>div>dl{
-    margin: 1rem 0 0 1rem;
-}
-
-article>p{
-    writing-mode: vertical-rl;
-    text-align: right;
-    width: 1.5em;
-    padding-left: 0.1rem;
-    margin-left: 0.2rem;
-    border-left: solid thin #000000;
-}
-
-time{
-    padding: 1rem 0;
-    color: #dbdbdb;
-    background-color: #282828;
-}
-
-footer{
-    width: 100%;
+    flex-grow: 1;
+    margin: 4rem 0 4vh 2rem;
     display: flex;
     justify-content: center;
 }
 
-.active{
-    animation-name: flash;
-    animation-duration: 50ms;
-    animation-iteration-count: 7;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
+article>div>div{
+    max-width: 40rem;
+    width: 75%;
+    padding: 4vh 8% 4vh 8%;
+    background-color: #ffffff;
 }
 
-.active>div{
-    animation-name: move_rtl;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+.items{
+    margin-left: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.active>h3{
-    animation-name: move_ltr;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+article span{
+    margin: 0 1rem;
 }
 
-.active>h3>span{
-    animation-name: h3_slide_ltr;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
+#join{
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: center;
 }
 
-.active>p{
-    animation-name: move_ttb;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
+#join>a{
+    color: rgb(12, 19, 117);
+    text-decoration: none;
+    padding: 0 1rem;
+    border-bottom: thin solid rgb(12, 19, 117);
 }
 
-@keyframes fade_in{
-    100%{opacity: 1;}
+.year{
+    display: inline;
 }
 
-@keyframes fade_out{
-    100%{opacity: 0;visibility: hidden;}
-}
-
-@keyframes flash{
-    0%{opacity: 0;visibility: visible;}
-    100%{opacity: 1;visibility: visible;}
-}
-
-@keyframes flash_loose{
-    0%{opacity: 0.6;}
-    100%{opacity: 1;}
-}
-
-@keyframes h3_slide_ltr{
-    0%{width: 0em;height: 1.5em;padding-right: 13rem;}
-    100%{width: 12rem;height: 1.5em;padding-right: 1rem;}
-}
-
-@keyframes h1h5_slide_ltr{
-    0%{width: 0em;height: 1.5em;padding-right: 20rem;}
-    100%{width: 18rem;height: 1.5em;padding-right: 2rem;}
-}
-
-@keyframes move_ltr{
-    0%{padding-right: 4rem;}
-    100%{padding-right: 0;}
-}
-
-@keyframes move_rtl{
-    0%{margin-left: 2rem;}
-    100%{margin-left: 0;}
-}
-
-@keyframes move_ttb{
-    0%{padding-bottom: 6rem;}
-    100%{padding-bottom: 0;}
+footer{
+    text-align: center;
 }
