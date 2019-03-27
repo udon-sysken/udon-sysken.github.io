@@ -1,7 +1,7 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: serif;
 
     background-image: url("image/bg_dot.svg");
     background-size: 1rem;
@@ -50,12 +50,13 @@ canvas{
     overflow: hidden;
     width: 100%;
     height: 75vh;
+    min-height: 20rem;
 }
 
 
 #header{
     color: #ffffff;
-
+    background: linear-gradient(to bottom,rgb(0, 175, 255), rgb(12, 19, 117));
     padding-top: 25vh;
     height: 50vh;
 
@@ -65,29 +66,69 @@ canvas{
     justify-content: center;
 }
 
+#header>*{
+    visibility: hidden;
+    animation-name: flash;
+    animation-delay: 100ms;
+    animation-duration: 50ms;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
 #header>img#logotype{
     width: 12rem;
 }
 
+#header span{
+    display: inline-block;
+    background: url("image/bg_harf.svg"), radial-gradient(#e0e0e0, #ffffff);
+    background-size: 1em 1.5em;
+    background-blend-mode: multiply;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+}
+
+h1{
+    background-image: url("image/bg_tri_c.svg"), url("image/bg_tri_c.svg"), url("image/bg_tri_d.svg"),
+                      url("image/bg_tri_a.svg"), url("image/bg_tri_b.svg");
+    background-position: 0.5em 0.1em, 1.5em 0.1em, 8.5em 1.2em,
+                         left top, right bottom;
+    background-size: 0.1em 0.16em, 0.1em 0.16em, 0.1em 0.16em,
+                     2rem 4rem, 2rem 4rem;
+    background-repeat: no-repeat;
+}
+
+#contents{
+    box-shadow: 0 -0.5rem 0.5rem rgba(0, 0, 0);
+}
+
 article{
+    visibility: hidden;
     display: flex;
     flex-wrap: wrap;
 
-    margin: 4%;
+    padding: 4%;
 }
 
 article>header{
+    height: 12rem;
     margin-right: 4rem;
-    margin-bottom: -6rem;
+    margin-bottom: -2rem;
     z-index: 1;
 }
 
 article h2{
-    background-color: rgb(0, 175, 255);
     width: 12rem;
     height: 12rem;
+    background-color: rgb(0, 175, 255);
+    word-break: break-all;
 }
 
+article h2>span{
+    display: inline-block;
+    overflow: hidden;
+}
 
 article small{
     color: #282828;
@@ -106,8 +147,17 @@ article time{
     padding-left: 4rem;
 }
 
-article h3, article h5{
+article h5{
     color: rgb(4, 123, 209);
+}
+
+
+article h3{
+    background: url("image/bg_harf.svg"), radial-gradient(#007090, #047fa0);
+    background-size: 1em 1.5em;
+    background-blend-mode: multiply;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
 }
 
 article>div{
@@ -130,7 +180,7 @@ article>div>div{
     flex-wrap: wrap;
 }
 
-article span{
+.items>span{
     margin: 0 1rem;
 }
 
@@ -139,6 +189,12 @@ article span{
 
     display: flex;
     justify-content: center;
+}
+
+#join>a:hover{
+    animation-name: marker;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
 }
 
 #join>a{
@@ -154,4 +210,33 @@ article span{
 
 footer{
     text-align: center;
+}
+
+.active{
+    animation-name: flash;
+    animation-duration: 50ms;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.active h2>span{
+    animation-name: h2_slide_ltr;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flash{
+    0%{opacity: 0;visibility: visible;}
+    100%{opacity: 1;visibility: visible;}
+}
+
+@keyframes marker{
+    100%{color: rgb(192, 18, 18);border-bottom: thin solid rgb(192, 18, 18);}
+}
+
+@keyframes h2_slide_ltr{
+    0%{width: 0em;height: 1.5em;padding-right: 6em;}
+    100%{width: 6em;height: 1.5em;padding-right: 0em;}
 }
