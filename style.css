@@ -273,6 +273,10 @@ footer>small{
     display: block;
 }
 
+footer>small>small{
+    color: #222222;
+}
+
 .active{
     animation-name: flash;
     animation-duration: 50ms;
