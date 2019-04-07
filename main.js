@@ -45,7 +45,7 @@ function output_library(){
 
     var books_info = "";
     for(var i = 0; i<5&&stacks_number*5+i<library.length; i++){
-        books_info += "<table>";
+        books_info += '<table id="book' + (i+1) + '">';
         books_info += "<tr>";
         books_info += "<th>title</th>";
         books_info += "<td>";

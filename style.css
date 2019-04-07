@@ -75,7 +75,6 @@ h1, h2, h3, h4, h5, h6, th, td{
     animation-iteration-count: 7;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-    text-shadow: 0 0 0.2rem rgb(4, 6, 85);
 }
 
 #header span{
@@ -101,9 +100,11 @@ article{
 
 article>header{
     height: 12rem;
-    margin-right: 4rem;
+    margin-right: 6rem;
     margin-bottom: -2rem;
     z-index: 1;
+
+    margin-left: -2rem;
 }
 
 article h2{
@@ -114,23 +115,14 @@ article h2{
 
 article#about h2{
     background: rgb(230, 47, 61);
-    background-position: left top;
-    background-size: 4rem 6rem, 12rem, 12rem;
-    background-repeat: no-repeat;
 }
 
 article#performance h2{
     background: rgb(239, 106, 66);
-    background-position: left top;
-    background-size: 4rem 6rem, 12rem, 12rem;
-    background-repeat: no-repeat;
 }
 
 article#library h2{
     background: rgb(246, 221, 12);
-    background-position: left top;
-    background-size: 4rem 6rem, 12rem, 12rem;
-    background-repeat: no-repeat;
 }
 
 
@@ -201,8 +193,44 @@ table{
     height: 6rem;
     padding-left: 1rem;
     margin: 1.5rem 0;
+    visibility: hidden;
     
     border-left: medium double rgb(246, 221, 12);
+}
+
+#book1{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+#book2{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+
+#book3{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+#book4{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+}
+
+#book5{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
 }
 
 th{
@@ -252,7 +280,14 @@ footer>small{
 .active header{
     animation-name: move_ltr;
     animation-duration: 1s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.active>div>div{
+    animation-name: move_rtl;
+    animation-duration: 1s;
+    animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
 
@@ -266,6 +301,15 @@ footer>small{
 @keyframes flash{
     0%{opacity: 0;visibility: visible;}
     100%{opacity: 1;visibility: visible;}
+}
+
+@keyframes move_ltr{
+    100%{margin-left: 0rem;margin-right: 2rem;}
+}
+
+@keyframes move_rtl{
+    0%{margin-left: 4rem;margin-right: -4rem;}
+    100%{margin-left: 0rem;margin-right: 0rem;}
 }
 
 @keyframes h1_slide_ltr{
