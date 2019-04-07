@@ -48,9 +48,9 @@ h1, h2, h3, h4, h5, h6, th, td{
 
 
 #header{
-    background: radial-gradient(#00000000, rgb(0, 2, 25)), url("image/header2.png"), url("image/header1.png");
+    background: radial-gradient(#00000000, rgb(0, 2, 25)), url("image/header2.png"), url("image/header1.png"), rgb(4, 6, 85);
     background-size: cover;
-    background-blend-mode: overlay, color-dodge;
+    background-blend-mode: overlay, color-dodge, normal;
     background-position: center, 0 0, center center;
 
     color: #ffffff;
@@ -87,11 +87,8 @@ h1, h2, h3, h4, h5, h6, th, td{
     animation-fill-mode: forwards;
 }
 
-h1{
-    background-image: url("image/quotes_a.svg"), url("image/quotes_b.svg");
-    background-position: left top, right bottom;
-    background-size: 2rem 4rem, 2rem 4rem;
-    background-repeat: no-repeat;
+#logotype{
+    width: 12rem;
 }
 
 article{
@@ -112,12 +109,28 @@ article>header{
 article h2{
     width: 12rem;
     height: 12rem;
-    background: url("image/quotes_a.svg"), url("image/article_header.png");
+    word-break: break-all;
+}
+
+article#about h2{
+    background: rgb(230, 47, 61);
     background-position: left top;
     background-size: 4rem 6rem, 12rem, 12rem;
     background-repeat: no-repeat;
-    background-blend-mode: normal;
-    word-break: break-all;
+}
+
+article#performance h2{
+    background: rgb(239, 106, 66);
+    background-position: left top;
+    background-size: 4rem 6rem, 12rem, 12rem;
+    background-repeat: no-repeat;
+}
+
+article#library h2{
+    background: rgb(246, 221, 12);
+    background-position: left top;
+    background-size: 4rem 6rem, 12rem, 12rem;
+    background-repeat: no-repeat;
 }
 
 
@@ -152,13 +165,8 @@ time{
     padding-left: 4rem;
 }
 
-article div>div>div>h5, article th{
-    color: rgb(13, 159, 212);
-}
-
-
-article h3{
-    color: rgb(5, 23, 109);
+article div>div>div>h5{
+    color: rgb(239, 106, 66);
 }
 
 article>div{
@@ -172,7 +180,7 @@ article>div>div{
     max-width: 40rem;
     width: 75%;
     padding: 4vh 8% 4vh 8%;
-    background: url("image/quotes_b.svg"), rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     background-position: right bottom;
     background-size: 2rem 3rem;
     background-repeat: no-repeat;
@@ -182,6 +190,7 @@ article>div>div{
     margin-left: 1.5rem;
     display: flex;
     flex-wrap: wrap;
+    color: #222222;
 }
 
 .items>span, .items>ruby{
@@ -192,7 +201,12 @@ table{
     height: 6rem;
     padding-left: 1rem;
     margin: 1.5rem 0;
-    border-left: medium double rgb(5, 23, 109);
+    
+    border-left: medium double rgb(246, 221, 12);
+}
+
+th{
+    color: #222222;
 }
 
 #form{
@@ -209,10 +223,10 @@ table{
 }
 
 #join>a{
-    color: rgb(13, 159, 212);
+    color: rgb(230, 47, 61);
     text-decoration: none;
     padding: 0 1rem;
-    border-bottom: thin solid rgb(13, 159, 212);
+    border-bottom: thin solid rgb(230, 47, 61);
 }
 
 .year{
