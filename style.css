@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6, th, td{
     border-bottom-right-radius: 50% 2rem;
 }
 
+#header small{
+    color: #dadada;
+}
+
 #header>*{
     visibility: hidden;
     animation-name: flash;
