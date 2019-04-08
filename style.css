@@ -1,0 +1,331 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+
+    background-image: url("image/background.svg");
+    background-size: 1rem;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h5{
+    font-size: 1rem;
+}
+
+h6{
+    font-size: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, th, td{
+    margin: 0;
+}
+
+
+.button{
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+#header{
+    background: radial-gradient(#00000000, rgb(0, 2, 25)), url("image/header2.png"), url("image/header1.png"), rgb(4, 6, 85);
+    background-size: cover;
+    background-blend-mode: overlay, color-dodge, normal;
+    background-position: center, 0 0, center center;
+
+    color: #ffffff;
+    padding-top: 25vh;
+    height: 50vh;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom-left-radius: 50% 2rem;
+    border-bottom-right-radius: 50% 2rem;
+}
+
+#header small{
+    color: #dadada;
+}
+
+#header>*{
+    visibility: hidden;
+    animation-name: flash;
+    animation-delay: 100ms;
+    animation-duration: 50ms;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+#header span{
+    overflow: hidden;
+    display: inline-block;
+    animation-name: h1_slide_ltr;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+#logotype{
+    width: 12rem;
+}
+
+article{
+    visibility: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 4%;
+}
+
+article>header{
+    height: 12rem;
+    margin-right: 6rem;
+    margin-bottom: -2rem;
+    z-index: 1;
+
+    margin-left: -2rem;
+}
+
+article h2{
+    width: 12rem;
+    height: 12rem;
+    word-break: break-all;
+}
+
+article#about h2{
+    background: rgb(230, 47, 61);
+}
+
+article#performance h2{
+    background: rgb(239, 106, 66);
+}
+
+article#library h2{
+    background: rgb(246, 221, 12);
+}
+
+
+article h2>span{
+    display: inline-block;
+    overflow: hidden;
+}
+
+article>header>small{
+    color: #222222;
+
+    position: relative;
+    top: -2.5em;
+    left: 6rem;
+}
+
+article>header>span{
+    writing-mode: vertical-rl;
+
+    position: relative;
+    top: -9em;
+    left: 0rem;
+}
+
+time{
+    display: block;
+    color: #dadada;
+    background: url("image/regimental.svg"), #222222;
+    background-size: 1em 1.5em;
+
+    margin-left: 2rem;
+    padding-left: 4rem;
+}
+
+article div>div>div>h5{
+    color: rgb(239, 106, 66);
+}
+
+article>div{
+    flex-grow: 1;
+    margin: 4rem 0 4vh 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+article>div>div{
+    max-width: 40rem;
+    width: 75%;
+    padding: 4vh 8% 4vh 8%;
+    background: rgba(255, 255, 255, 0.75);
+    background-position: right bottom;
+    background-size: 2rem 3rem;
+    background-repeat: no-repeat;
+}
+
+.items{
+    margin-left: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    color: #222222;
+}
+
+.items>span, .items>ruby{
+    margin: 0 1rem;
+}
+
+table{
+    height: 6rem;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    visibility: hidden;
+    
+    border-left: medium double rgb(246, 221, 12);
+}
+
+#book1{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+#book2{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+
+#book3{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+#book4{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+}
+
+#book5{
+    animation-name: flash;
+    animation-duration: 0.6s;
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
+}
+
+th{
+    color: #222222;
+}
+
+#form{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#join{
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+#join>a{
+    color: rgb(230, 47, 61);
+    text-decoration: none;
+    padding: 0 1rem;
+    border-bottom: thin solid rgb(230, 47, 61);
+}
+
+.year{
+    display: inline;
+}
+
+footer{
+    text-align: center;
+}
+
+footer>small{
+    display: block;
+}
+
+footer>small>small{
+    color: #222222;
+}
+
+.active{
+    animation-name: flash;
+    animation-duration: 50ms;
+    animation-iteration-count: 7;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.active header{
+    animation-name: move_ltr;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.active>div>div{
+    animation-name: move_rtl;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.active h2>span{
+    animation-name: h2_slide_ltr;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flash{
+    0%{opacity: 0;visibility: visible;}
+    100%{opacity: 1;visibility: visible;}
+}
+
+@keyframes move_ltr{
+    100%{margin-left: 0rem;margin-right: 2rem;}
+}
+
+@keyframes move_rtl{
+    0%{margin-left: 4rem;margin-right: -4rem;}
+    100%{margin-left: 0rem;margin-right: 0rem;}
+}
+
+@keyframes h1_slide_ltr{
+    0%{width: 0em;height: 1.2em;padding-right: 27rem;}
+    100%{width: 27rem;height: 1.2em;padding-right: 0em;}
+}
+
+@keyframes h2_slide_ltr{
+    0%{width: 0em;height: 1.5em;padding-right: 6em;}
+    100%{width: 6em;height: 1.5em;padding-right: 0em;}
+}
